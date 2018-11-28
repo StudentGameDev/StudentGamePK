@@ -113,6 +113,34 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &96490079
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 96490080}
+  m_Layer: 0
+  m_Name: Ground
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &96490080
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 96490079}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.12000036, y: -1.42, z: -0.017031917}
+  m_LocalScale: {x: 1.192, y: 0.64955837, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1580516060}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &189569035
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,7 +308,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 5ad2f3557af2d644d88f0864f10b4e4a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -377,7 +405,7 @@ GameObject:
   - component: {fileID: 687298509}
   - component: {fileID: 687298511}
   - component: {fileID: 687298510}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -496,7 +524,7 @@ Transform:
   - {fileID: 189569036}
   - {fileID: 1685616557}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1054991191
 GameObject:
@@ -644,10 +672,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1411827688}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.21, y: 1.8399999, z: -1}
+  m_LocalPosition: {x: -2.54, y: -0.6300001, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1580516060}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1429392646
@@ -737,7 +765,7 @@ GameObject:
   - component: {fileID: 1580516063}
   - component: {fileID: 1580516062}
   - component: {fileID: 1580516061}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Gracz1
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -797,12 +825,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1580516058}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.63, y: -2.44, z: 0}
+  m_LocalPosition: {x: -6.72, y: -1.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1411827691}
+  - {fileID: 96490080}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1580516061
 Rigidbody2D:
@@ -851,8 +879,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 4
-  playerJump: 4
-  onGround: 0
+  playerJump: 10
+  checkGround: {fileID: 96490080}
+  isGround:
+    serializedVersion: 2
+    m_Bits: 256
+  groundIsRadius: 0.1
 --- !u!1 &1604528853
 GameObject:
   m_ObjectHideFlags: 0

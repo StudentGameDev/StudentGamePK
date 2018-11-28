@@ -3,40 +3,54 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour
+{
 
+    private Rigidbody2D player;
     public float playerSpeed;
     public float playerJump;
-    private Rigidbody2D player;
-    public bool onGround;
+    private bool playerDoubleJump;
+
+    public Transform checkGround;
+    public LayerMask isGround;
+    public float groundIsRadius;    
+    private bool grounded;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         player = GetComponent<Rigidbody2D>();
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         PlayerMove();
-        onGround = true;
+    }
+
+    void FixedUpdate()
+    {
+        grounded = Physics2D.OverlapCircle(checkGround.position, groundIsRadius, isGround);
     }
 
     private void PlayerMove()
     {
-        // Strzałka w górę
-        if(onGround == true) { 
-            if (Input.GetKey(KeyCode.UpArrow))
-            {
-            
-                player.velocity = new Vector2(0, playerJump);
-                onGround = false;
-            }
+
+        if (grounded)
+        {
+            playerDoubleJump = false;
         }
 
-        // Strzałka w dół
-        if (Input.GetKey(KeyCode.DownArrow))
+        // Strzałka w górę
+        if (Input.GetKeyDown(KeyCode.UpArrow) && grounded)
         {
+            Jump();
+        }
 
+        if (Input.GetKeyDown(KeyCode.UpArrow) && !grounded && !playerDoubleJump)
+        {
+            Jump();
+            playerDoubleJump = true;
         }
 
         // Strzałka w lewo
@@ -50,5 +64,10 @@ public class Player : MonoBehaviour {
         {
             player.velocity = new Vector2(playerSpeed, GetComponent<Rigidbody2D>().velocity.y);
         }
+    }
+
+    void Jump()
+    {
+        player.velocity = new Vector2(0, playerJump);
     }
 }
