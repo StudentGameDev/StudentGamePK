@@ -15,11 +15,13 @@ public class Player : MonoBehaviour
     public LayerMask isGround;
     public float groundIsRadius;    
     private bool grounded;
+    private Animator anim;
 
     // Use this for initialization
     void Start()
     {
         player = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -40,6 +42,7 @@ public class Player : MonoBehaviour
         {
             playerDoubleJump = false;
         }
+        anim.SetBool("Grounded", grounded);
 
         // Strzałka w górę
         if (Input.GetKeyDown(KeyCode.UpArrow) && grounded)
@@ -64,6 +67,17 @@ public class Player : MonoBehaviour
         {
             player.velocity = new Vector2(playerSpeed, GetComponent<Rigidbody2D>().velocity.y);
         }
+
+        if (player.velocity.x > 0)
+        {
+            player.transform.localScale = new Vector3(1f, 1f, 1f);
+        }
+        else if (player.velocity.x < 0)
+        {
+            player.transform.localScale = new Vector3(-1f, 1f, 1f);
+        }
+
+        anim.SetFloat("Speed", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
     }
 
     void Jump()
