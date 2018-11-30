@@ -9,19 +9,25 @@ public class Player : MonoBehaviour
     private Rigidbody2D player;
     public float playerSpeed;
     public float playerJump;
-    private bool playerDoubleJump;
+    private bool blockJump;
 
     public Transform checkGround;
     public LayerMask isGround;
     public float groundIsRadius;    
     private bool grounded;
     private Animator anim;
+    private Camera mainCamera;
+    private float cameraWidth;
+    private const int playerSize = 1;
 
     // Use this for initialization
     void Start()
     {
         player = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        mainCamera = Camera.main;
+        float height = 2f * mainCamera.orthographicSize;
+        cameraWidth = height * mainCamera.aspect;
     }
 
     // Update is called once per frame
@@ -40,7 +46,7 @@ public class Player : MonoBehaviour
 
         if (grounded)
         {
-            playerDoubleJump = false;
+            blockJump = false;
         }
         anim.SetBool("Grounded", grounded);
 
@@ -50,38 +56,41 @@ public class Player : MonoBehaviour
             Jump();
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) && !grounded && !playerDoubleJump)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && !grounded && !blockJump)
         {
             Jump();
-            playerDoubleJump = true;
+            blockJump = true;
         }
 
         // Strzałka w lewo
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow) && (player.transform.position.x >= mainCamera.transform.position.x + playerSize - cameraWidth / 2))
         {
             player.velocity = new Vector2(-playerSpeed, GetComponent<Rigidbody2D>().velocity.y);
         }
 
         // Strzałka w prawo
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow) && (player.transform.position.x < mainCamera.transform.position.x - playerSize + cameraWidth / 2))
         {
             player.velocity = new Vector2(playerSpeed, GetComponent<Rigidbody2D>().velocity.y);
         }
 
+        // obrót w prawo
         if (player.velocity.x > 0)
         {
             player.transform.localScale = new Vector3(1f, 1f, 1f);
         }
+        // obrót w lewo
         else if (player.velocity.x < 0)
         {
             player.transform.localScale = new Vector3(-1f, 1f, 1f);
         }
 
+        // animacja ruchu
         anim.SetFloat("Speed", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
     }
 
     void Jump()
     {
-        player.velocity = new Vector2(0, playerJump);
+        player.velocity = new Vector2(0.0001f, playerJump);
     }
 }
