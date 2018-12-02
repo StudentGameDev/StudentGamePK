@@ -17,8 +17,6 @@ public class PlayerScoreboardItem : MonoBehaviour {
     public void Setup(string username, string scores, string date)
     {
         //usernameText = GameObject.Find("UserName").GetComponent<Text>();
-        //scoreText = GameObject.Find("Score").GetComponent<Text>();
-        //dateText = GameObject.Find("Date").GetComponent<Text>();
         usernameText.text = username;
         scoreText.text = scores.ToString();
         dateText.text = date;
