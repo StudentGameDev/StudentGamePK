@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreBoard : MonoBehaviour {
 
@@ -11,6 +12,9 @@ public class ScoreBoard : MonoBehaviour {
 
     [SerializeField]
     Transform playerScoreboardList;
+
+    [SerializeField]
+    ScrollRect scroll;
 
     // Use this for initialization
     void Start () {
@@ -34,6 +38,7 @@ public class ScoreBoard : MonoBehaviour {
                 }
                 
             }
+            scroll.verticalNormalizedPosition = 1f;
         }
     }
 
