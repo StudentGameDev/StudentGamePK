@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-//using UnityEngine.Audio;
 
+// Kontroler menu
 public class MenuCtrl : MonoBehaviour {
 
     [SerializeField]
@@ -25,6 +23,7 @@ public class MenuCtrl : MonoBehaviour {
         AudioListener.volume = AudioListener.volume == 0.0f ? 1.0f : 0.0f;
     }
 
+    // Przy wprowadzaniu nazwy gracza zapisuje ją do pliku
     public void EnterName()
     {
         string path = String.Format(@"{0}\CurrentScore.txt", Environment.CurrentDirectory);

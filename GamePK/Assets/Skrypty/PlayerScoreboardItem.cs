@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
+// Pojedynczy element na liście z wynikami
 public class PlayerScoreboardItem : MonoBehaviour {
 
     [SerializeField]
@@ -16,7 +15,6 @@ public class PlayerScoreboardItem : MonoBehaviour {
 
     public void Setup(string username, string scores, string date)
     {
-        //usernameText = GameObject.Find("UserName").GetComponent<Text>();
         usernameText.text = username;
         scoreText.text = scores.ToString();
         dateText.text = date;

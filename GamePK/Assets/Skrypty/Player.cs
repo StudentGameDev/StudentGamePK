@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private string userName = "Player1";
-
     private Rigidbody2D player;
     public float playerSpeed;
     public float playerJump;
@@ -27,10 +21,15 @@ public class Player : MonoBehaviour
     {
         player = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        SetCamera();
+    }
+
+    // Ustawia właściwości kamery podoążającej za graczem
+    private void SetCamera()
+    {
         mainCamera = Camera.main;
         float height = 2f * mainCamera.orthographicSize;
         cameraWidth = height * mainCamera.aspect;
-        LoadUserState();
     }
 
     // Update is called once per frame
@@ -94,20 +93,5 @@ public class Player : MonoBehaviour
     void Jump()
     {
         player.velocity = new Vector2(0.0001f, playerJump);
-    }
-
-    private void LoadUserState()
-    {
-        string path = String.Format(@"{0}\CurrentScore.txt", Environment.CurrentDirectory);
-
-        using (StreamReader sr = File.OpenText(path))
-        {
-            string line = "";
-            while ((line = sr.ReadLine()) != null)
-            {
-                var lineElements = line.Split(';');
-                userName = lineElements.Length > 0 ? lineElements[0] : userName;
-            }
-        }
-    }
+    }        
 }

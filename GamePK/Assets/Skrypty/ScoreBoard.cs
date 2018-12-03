@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Tablica, scrollowalna z wynikami ładowanymi z pliku
 public class ScoreBoard : MonoBehaviour {
 
     [SerializeField]
@@ -16,7 +15,6 @@ public class ScoreBoard : MonoBehaviour {
     [SerializeField]
     ScrollRect scroll;
 
-    // Use this for initialization
     void Start () {
         string path = String.Format(@"{0}\scores.txt", Environment.CurrentDirectory);
 
@@ -35,15 +33,9 @@ public class ScoreBoard : MonoBehaviour {
                     {
                         item.Setup(lineElements[0], lineElements[1], lineElements[2]);
                     }
-                }
-                
+                }                
             }
             scroll.verticalNormalizedPosition = 1f;
         }
-    }
-
-    // Update is called once per frame
-    void Update () {
-
     }
 }

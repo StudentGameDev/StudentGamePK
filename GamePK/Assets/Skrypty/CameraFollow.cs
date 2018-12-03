@@ -1,9 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+// Skrypt aktualizujący pozycję kamery na podstawie współrzędnych gracza z zadanymi ograniczeniami
 public class CameraFollow : MonoBehaviour {
 
+    // Współrzędna powyżej, której dalej kamera nie pójdzie. Jeżeli chcesz iść dalej w prawo to w Unity zwiększ tę liczbę. Reszta analogicznie
     [SerializeField]
     private float xMax;
     [SerializeField]
@@ -16,9 +16,6 @@ public class CameraFollow : MonoBehaviour {
 
     public Rigidbody2D player;
 
-    // Use this for initialization
-    void Start () {
-	}
 	
 	// Update is called once per frame
 	void Update () {
