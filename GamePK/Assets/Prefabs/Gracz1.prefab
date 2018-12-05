@@ -296,7 +296,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 711378abfd0a73c4b8f36635dc23e6c0, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -409,7 +409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9926e5a2358d5dd43918a3a09f0b7b5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpSource: {fileID: 0}
+  JumpSource: {fileID: 82245877098373372}
   playerSpeed: 5
   playerJump: 12
   checkGround: {fileID: 4650922853012442}
