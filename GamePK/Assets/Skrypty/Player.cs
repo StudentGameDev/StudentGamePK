@@ -2,6 +2,9 @@
 
 public class Player : MonoBehaviour
 {
+    [SerializeField]
+    AudioSource JumpSource;
+
     private Rigidbody2D player;
     public float playerSpeed;
     public float playerJump;
