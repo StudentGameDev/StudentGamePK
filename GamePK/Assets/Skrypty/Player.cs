@@ -96,5 +96,6 @@ public class Player : MonoBehaviour
     void Jump()
     {
         player.velocity = new Vector2(0.0001f, playerJump);
+        JumpSource.Play();
     }        
 }
