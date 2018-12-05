@@ -76,12 +76,12 @@ public class Player : MonoBehaviour
         }
 
         // obrót w prawo
-        if (player.velocity.x > 0)
+        if (player.velocity.x > 0.1f)
         {
             player.transform.localScale = new Vector3(1f, 1f, 1f);
         }
         // obrót w lewo
-        else if (player.velocity.x < 0)
+        else if (player.velocity.x < -0.1f)
         {
             player.transform.localScale = new Vector3(-1f, 1f, 1f);
         }
