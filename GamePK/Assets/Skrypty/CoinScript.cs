@@ -12,7 +12,7 @@ public class CoinScript : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col)
     {
-        if (col is EdgeCollider2D)
+        if (col is EdgeCollider2D || col.name != "Gracz1")
             return;
 
         tickSource.Play();

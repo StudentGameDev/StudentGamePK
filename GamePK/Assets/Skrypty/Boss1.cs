@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bird : MonoBehaviour {
+public class Boss1 : MonoBehaviour {
 
     public float speed;
     private Rigidbody2D enemy;
