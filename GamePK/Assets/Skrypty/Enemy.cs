@@ -6,9 +6,10 @@ public class Enemy : MonoBehaviour {
 
     public Rigidbody2D player, enemy;
     public Transform xStart;
+    public Vector3 spawnPoint;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         enemy = GetComponent<Rigidbody2D>();
         enemy.gravityScale = 0;
 	}
@@ -21,4 +22,13 @@ public class Enemy : MonoBehaviour {
             enemy.gravityScale = 1;
         }
 	}
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "Player")
+        {
+            collision.transform.position = spawnPoint;
+            //Destroy(gameObject);
+        }
+    }
 }

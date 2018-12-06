@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Bird : MonoBehaviour {
-
+    public Vector3 spawnPoint;
     public float speed;
     private Rigidbody2D enemy;
     public Transform startX;
@@ -39,6 +39,23 @@ public class Bird : MonoBehaviour {
         {
             enemy.velocity = new Vector2(-speed, enemy.velocity.y);
             transform.localScale = new Vector3(-1f, 1f, 1f);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.name == "Gracz1")
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "Player")
+        {
+            collision.transform.position = spawnPoint;
+            //Destroy(gameObject);
         }
     }
 }
