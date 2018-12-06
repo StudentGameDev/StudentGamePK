@@ -12,8 +12,8 @@ public class CoinScript : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col)
     {
-        if (col is EdgeCollider2D)
-            return;
+        if (col is EdgeCollider2D || col.name != "Gracz1")
+            return;        
 
         tickSource.Play();
         ScoreScript.coinAmount += 10;
