@@ -97,5 +97,13 @@ public class Player : MonoBehaviour
     {
         player.velocity = new Vector2(0.0001f, playerJump);
         JumpSource.Play();
-    }        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "FallDetector")
+        {
+
+        }
+    }
 }
