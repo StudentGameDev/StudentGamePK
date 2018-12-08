@@ -50,12 +50,12 @@ public class Bird : MonoBehaviour {
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.transform.tag == "Player")
-        {
-            collision.transform.position = spawnPoint;
-            //Destroy(gameObject);
-        }
-    }
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.transform.tag == "Gracz1")
+    //    {
+    //        collision.transform.position = spawnPoint;
+    //        //Destroy(gameObject);
+    //    }
+    //}
 }

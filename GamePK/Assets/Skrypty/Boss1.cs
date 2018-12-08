@@ -4,27 +4,32 @@ using UnityEngine;
 
 public class Boss1 : MonoBehaviour {
 
+    private Animator anim;
     public float speed;
-    private Rigidbody2D enemy;
+    public Rigidbody2D boss, player;
     public Transform startX;
     public Transform stopX;
-    public bool right;
+    public bool right, seePlayer;
 
     void Start()
     {
-        enemy = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         right = true;
+        seePlayer = false;
     }
 
     void Update()
     {
-        if (enemy.position.x < startX.position.x)
+        if ((boss.position.x - player.position.x) <= 3)
+            anim.SetBool("SeePlayer", seePlayer);
+
+        if (boss.position.x < startX.position.x)
         {
             // idz w prawo
             right = true;
         }
 
-        if (enemy.position.x > stopX.position.x)
+        if (boss.position.x > stopX.position.x)
         {
             // idz w lewo
             right = false;
@@ -32,13 +37,16 @@ public class Boss1 : MonoBehaviour {
 
         if (right == true)
         {
-            enemy.velocity = new Vector2(speed, enemy.velocity.y);
-            transform.localScale = new Vector3(1f, 1f, 1f);
+            boss.velocity = new Vector2(speed, boss.velocity.y);  // ustawienie prędkości
+            transform.localScale = new Vector3(1f, 1f, 1f);       // kierunek 
         }
         else
         {
-            enemy.velocity = new Vector2(-speed, enemy.velocity.y);
+            boss.velocity = new Vector2(-speed, boss.velocity.y);
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
+        
+
+        anim.SetFloat("Speed", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
     }
 }
