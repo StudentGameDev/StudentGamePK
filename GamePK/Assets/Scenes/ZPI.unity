@@ -11415,7 +11415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 7
   boss: {fileID: 1457032431}
-  player: {fileID: 0}
+  player: {fileID: 1166511040}
   startX: {fileID: 527148477}
   stopX: {fileID: 64530405}
   right: 0
