@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     private Camera mainCamera;
     private float cameraWidth;
     private const int playerSize = 1;
+    public Vector3 respawnPoint;
 
     // Use this for initialization
     void Start()
@@ -103,7 +104,12 @@ public class Player : MonoBehaviour
     {
         if(collision.tag == "FallDetector")
         {
+            transform.position = respawnPoint;
+        }
 
+        if (collision.tag == "CheckPoint")
+        {
+            respawnPoint = collision.transform.position;
         }
     }
 }
