@@ -33,4 +33,9 @@ public class MenuCtrl : MonoBehaviour {
             sw.Write(usernameText.text + ";");
         }
     }
+
+    public void LoadSceneConfirm(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
 }

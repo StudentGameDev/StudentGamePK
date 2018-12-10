@@ -6,8 +6,11 @@ public class BGPauseSound : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        BGSound.Instance.gameObject.GetComponent<AudioSource>().Pause();
-	}
+        var bg = BGSound.Instance;
+        if (bg != null)
+            bg.gameObject.GetComponent<AudioSource>().Pause();
+
+    }
 	
 	// Update is called once per frame
 	void Update () {

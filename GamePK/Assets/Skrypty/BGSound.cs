@@ -20,6 +20,13 @@ public class BGSound : MonoBehaviour {
         if (instance != null && instance != this)
         {
             Destroy(this.gameObject);
+            if (!instance.gameObject.GetComponent<AudioSource>().isPlaying)
+            {
+                instance.gameObject.GetComponent<AudioSource>().time = 0f;
+                instance.gameObject.GetComponent<AudioSource>().Play();
+            }
+            //instance.gameObject.GetComponent<AudioSource>().Play();
+            //instance = this;
             return;
         }
         else
