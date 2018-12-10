@@ -687,7 +687,7 @@ GameObject:
   m_Component:
   - component: {fileID: 64530405}
   m_Layer: 0
-  m_Name: StopX
+  m_Name: StopXBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4011,7 +4011,7 @@ GameObject:
   m_Component:
   - component: {fileID: 527148477}
   m_Layer: 0
-  m_Name: StartX
+  m_Name: StartXBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8691,7 +8691,7 @@ Prefab:
     - target: {fileID: 114967764504482916, guid: c8420039ed9ecfd44bd4c5f3550a79f2,
         type: 2}
       propertyPath: playerJump
-      value: 15
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 61527994287132300, guid: c8420039ed9ecfd44bd4c5f3550a79f2,
         type: 2}
@@ -8720,7 +8720,7 @@ Prefab:
     - target: {fileID: 114967764504482916, guid: c8420039ed9ecfd44bd4c5f3550a79f2,
         type: 2}
       propertyPath: playerSpeed
-      value: 6
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8420039ed9ecfd44bd4c5f3550a79f2, type: 2}

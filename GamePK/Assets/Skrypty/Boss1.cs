@@ -21,10 +21,10 @@ public class Boss1 : MonoBehaviour {
     void Update()
     {
         /*Przeciwnik porusza się do określonego momentu dopóki gracz nie osiągnie odpowiedniego punktu*/
-        if (player.position.x < startX.position.x || player.position.x > stopX.position.x || player.position.x < (boss.position.x - 4.5f) || player.position.x > (boss.position.x + 4.5f))
+        if (player.position.x < startX.position.x || player.position.x > stopX.position.x || player.position.x <= (boss.position.x - 4f) || player.position.x >= (boss.position.x + 4f))
             MoveLeftOrRight();
         else //if //(player.position.x > startX.position.x && player.position.x < stopX.position.x || player.position.x >= (boss.position.x - 3f))
-            anim.SetFloat("Speed", 0.0f);
+            boss.velocity = new Vector2(0, boss.velocity.y);
         //anim.SetBool("IsClose", isClose);
 
         //Destroy(gameObject);
