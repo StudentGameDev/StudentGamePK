@@ -8,6 +8,7 @@ TagManager:
   - FallDetector
   - CheckPoint
   - NextLevel
+  - Boss1
   layers:
   - Default
   - TransparentFX

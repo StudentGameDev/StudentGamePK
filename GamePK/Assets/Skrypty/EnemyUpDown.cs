@@ -6,7 +6,7 @@ public class EnemyUpDown : MonoBehaviour {
 
     public Rigidbody2D enemy;
     public Transform yStart, yStop;
-
+    public Vector3 spawnPoint;
     // Use this for initialization
     void Start () {
         enemy = GetComponent<Rigidbody2D>();
@@ -21,6 +21,15 @@ public class EnemyUpDown : MonoBehaviour {
         if (enemy.position.y >= yStart.position.y)
         {
             enemy.gravityScale = 0.3f;
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "Gracz1")
+        {
+            
+            Destroy(gameObject);
         }
     }
 }

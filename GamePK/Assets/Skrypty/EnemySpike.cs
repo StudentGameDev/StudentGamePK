@@ -6,7 +6,7 @@ public class EnemySpike : MonoBehaviour {
 
     public Rigidbody2D player, enemy;
     public Transform xStart;
-    
+    public Vector3 spawnPoint;
 
     // Use this for initialization
     void Start()
@@ -21,5 +21,13 @@ public class EnemySpike : MonoBehaviour {
 
         if (player.position.x >= xStart.position.x)
             enemy.gravityScale = 1;
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "Gracz1")
+        {
+            collision.transform.position = spawnPoint;
+        }
     }
 }

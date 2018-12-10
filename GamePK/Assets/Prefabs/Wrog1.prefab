@@ -21,10 +21,10 @@ GameObject:
   - component: {fileID: 4679370823041030}
   - component: {fileID: 212181229183371294}
   - component: {fileID: 50215444211017324}
-  - component: {fileID: 61571173563791960}
   - component: {fileID: 114049215755363002}
   - component: {fileID: 95540184631872806}
   - component: {fileID: 68486149111283314}
+  - component: {fileID: 61679465124393962}
   m_Layer: 0
   m_Name: Postac1
   m_TagString: Untagged
@@ -55,7 +55,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4604507563507508}
-  - component: {fileID: 114041223487842894}
   m_Layer: 0
   m_Name: Wrog1
   m_TagString: Untagged
@@ -85,7 +84,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1928917563156146}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.760063, y: 2.41, z: -0.8125}
+  m_LocalPosition: {x: -34.38, y: 7.02, z: -0.43945312}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4679370823041030}
@@ -153,7 +152,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61571173563791960
+--- !u!61 &61679465124393962
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,7 +164,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.2394979}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -176,7 +175,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 1.57}
+  m_Size: {x: 2.5, y: 1.0910044}
   m_EdgeRadius: 0
 --- !u!68 &68486149111283314
 EdgeCollider2D:
@@ -193,9 +192,9 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -1.2054081, y: 0.71140504}
-  - {x: 0.026585579, y: 0.8373232}
-  - {x: 1.0307751, y: 0.42387247}
+  - {x: -0.78256035, y: 1.0028086}
+  - {x: 0.026586533, y: 0.9877696}
+  - {x: 0.6551037, y: 0.9879601}
 --- !u!95 &95540184631872806
 Animator:
   serializedVersion: 3
@@ -214,18 +213,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114041223487842894
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1928917563156146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55f7f32aa45c9204fb87230f59793f5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoint: {x: -6.11, y: -0.497, z: 0}
 --- !u!114 &114049215755363002
 MonoBehaviour:
   m_ObjectHideFlags: 1

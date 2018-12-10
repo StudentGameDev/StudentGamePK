@@ -42,7 +42,7 @@ public class Bird : MonoBehaviour {
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+     void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.name == "Gracz1")
         {
@@ -50,12 +50,12 @@ public class Bird : MonoBehaviour {
         }
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.transform.tag == "Gracz1")
-    //    {
-    //        collision.transform.position = spawnPoint;
-    //        //Destroy(gameObject);
-    //    }
-    //}
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "Gracz1")
+        {
+            collision.transform.position = spawnPoint;
+            //Destroy(gameObject);
+        }
+    }
 }
