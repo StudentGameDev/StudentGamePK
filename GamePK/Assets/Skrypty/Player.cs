@@ -19,12 +19,15 @@ public class Player : MonoBehaviour
     private float cameraWidth;
     private const int playerSize = 1;
     public Vector3 respawnPoint;
+    public LevelManager gameLevelManager;
 
     // Use this for initialization
     void Start()
     {
         player = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        respawnPoint = transform.position;
+        gameLevelManager = FindObjectOfType<LevelManager>();
         SetCamera();
     }
 
@@ -100,16 +103,16 @@ public class Player : MonoBehaviour
         JumpSource.Play();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.tag == "FallDetector")
-        {
-            transform.position = respawnPoint;
-        }
 
-        if (collision.tag == "CheckPoint")
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "FallDetector")
         {
-            respawnPoint = collision.transform.position;
+            gameLevelManager.Respawn();
+        }
+        if (other.tag == "CheckPoint")
+        {
+            respawnPoint = other.transform.position;
         }
     }
 }
