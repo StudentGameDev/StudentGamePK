@@ -8691,7 +8691,7 @@ Prefab:
     - target: {fileID: 114967764504482916, guid: c8420039ed9ecfd44bd4c5f3550a79f2,
         type: 2}
       propertyPath: playerJump
-      value: 30
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 61527994287132300, guid: c8420039ed9ecfd44bd4c5f3550a79f2,
         type: 2}
@@ -8720,7 +8720,7 @@ Prefab:
     - target: {fileID: 114967764504482916, guid: c8420039ed9ecfd44bd4c5f3550a79f2,
         type: 2}
       propertyPath: playerSpeed
-      value: 15
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8420039ed9ecfd44bd4c5f3550a79f2, type: 2}
@@ -11372,7 +11372,7 @@ MonoBehaviour:
   startX: {fileID: 527148477}
   stopX: {fileID: 64530405}
   isRight: 0
-  isClose: 0
+  predkoscZmianaAnim: 0
 --- !u!50 &1457032431
 Rigidbody2D:
   serializedVersion: 4

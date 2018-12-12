@@ -5,17 +5,18 @@ using UnityEngine;
 public class Boss1 : MonoBehaviour {
 
     private Animator anim;
-    public float speed;
+    public float speed, predkoscZmianaAnimacji;
     public Rigidbody2D boss, player;
     public Transform startX, stopX;
-    public bool isRight, isClose;
+    public bool isRight;
+    
 
     void Start()
     {
         boss = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         isRight = true;
-        isClose = false;
+        speed = 5;
     }
 
     void Update()
@@ -23,16 +24,14 @@ public class Boss1 : MonoBehaviour {
         /*Przeciwnik porusza się do określonego momentu dopóki gracz nie osiągnie odpowiedniego punktu*/
         if (player.position.x < startX.position.x || player.position.x > stopX.position.x || player.position.x <= (boss.position.x - 4f) || player.position.x >= (boss.position.x + 4f))
             MoveLeftOrRight();
-        else //if //(player.position.x > startX.position.x && player.position.x < stopX.position.x || player.position.x >= (boss.position.x - 3f))
-            boss.velocity = new Vector2(0, boss.velocity.y);
-        //anim.SetBool("IsClose", isClose);
-
-        //Destroy(gameObject);
-
-        //anim.SetFloat("Speed", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
-
-        //if (player.position.x )
-        //  anim.SetBool("SeePlayer", seePlayer);
+        else if(player.position.x > (boss.position.x - 4.0f) || player.position.x < (boss.position.x + 4f))
+        {
+            predkoscZmianaAnimacji = 0;
+            boss.velocity = new Vector2(predkoscZmianaAnimacji, boss.velocity.y);
+            anim.SetFloat("Speed", predkoscZmianaAnimacji);
+        }
+            
+       
     }
 
     private void MoveLeftOrRight()
