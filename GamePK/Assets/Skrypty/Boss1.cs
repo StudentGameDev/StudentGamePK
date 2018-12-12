@@ -9,7 +9,7 @@ public class Boss1 : MonoBehaviour {
     public Rigidbody2D boss, player;
     public Transform startX, stopX;
     public bool isRight;
-    
+    public Vector3 spawnPoint;
 
     void Start()
     {
@@ -30,12 +30,44 @@ public class Boss1 : MonoBehaviour {
             
         }
             
-        else if(player.position.x > (boss.position.x - 4.5) || player.position.x < (boss.position.x + 4.5))
+        else if(player.position.x > (boss.position.x - 4.5))
         {
-            predkoscZmianaAnimacji = 0.0f;
-            boss.velocity = new Vector2(predkoscZmianaAnimacji, boss.velocity.y);
-            anim.SetFloat("Speed", predkoscZmianaAnimacji);
+            ChangeAnimation();
+            if(isRight)
+                transform.localScale = new Vector3(-1f, 1f, 1f);
         }
+        else if(player.position.x < (boss.position.x + 4.5))
+        {
+            ChangeAnimation();
+            if(isRight)
+                transform.localScale = new Vector3(-1f, 1f, 1f);
+        }
+
+        
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "Gracz1")
+        {
+            collision.transform.position = spawnPoint;
+            //Destroy(gameObject);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.name == "Gracz1")
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void ChangeAnimation()
+    {
+        predkoscZmianaAnimacji = 0.0f;
+        boss.velocity = new Vector2(predkoscZmianaAnimacji, boss.velocity.y);
+        anim.SetFloat("Speed", predkoscZmianaAnimacji);
     }
 
     private void MoveLeftOrRight()
@@ -52,12 +84,12 @@ public class Boss1 : MonoBehaviour {
             isRight = false;
         }
 
-        if (isRight == true)
+        if (isRight == true)  // poruszanie w prawo
         {
             boss.velocity = new Vector2(speed, boss.velocity.y);  // ustawienie prędkości
             transform.localScale = new Vector3(1f, 1f, 1f);       // kierunek 
         }
-        else
+        else // w lewo
         {
             boss.velocity = new Vector2(-speed, boss.velocity.y);
             transform.localScale = new Vector3(-1f, 1f, 1f);
