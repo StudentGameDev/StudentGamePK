@@ -31,7 +31,7 @@ public class ScoreBoard : MonoBehaviour {
                     var lineElements = line.Split(';');
                     if (lineElements.Length == 3)
                     {
-                        item.Setup(lineElements[0], lineElements[1], lineElements[2]);
+                        item.Setup(lineElements[0], lineElements[2], lineElements[1]);
                     }
                 }                
             }
