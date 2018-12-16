@@ -61,11 +61,13 @@ public class Player : MonoBehaviour
         // Strzałka w górę
         if (Input.GetKeyDown(KeyCode.UpArrow) && grounded)
         {
+            Debug.Log("TEST");
             Jump();
         }
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && !grounded && !blockJump)
         {
+            Debug.Log("TEST");
             Jump();
             blockJump = true;
         }
