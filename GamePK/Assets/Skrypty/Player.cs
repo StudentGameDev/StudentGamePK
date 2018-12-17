@@ -117,5 +117,26 @@ public class Player : MonoBehaviour
         {
             respawnPoint = other.transform.position;
         }
+        if(other.tag == "Saw1")
+        {
+            Destroy(GameObject.FindWithTag("Saw1"));
+        }
+        if(other.tag == "Mace1")
+        {
+            gameObject.transform.position = respawnPoint;
+        }
+        //if (other.tag == "Postac1")
+        //{
+        //    Destroy(GameObject.FindWithTag("Postac1"));
+        //    //gameObject.transform.position = respawnPoint;
+        //}
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "Postac1")
+        {
+            gameObject.transform.position = respawnPoint;
+        }
     }
 }

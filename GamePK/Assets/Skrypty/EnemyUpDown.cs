@@ -4,31 +4,41 @@ using UnityEngine;
 
 public class EnemyUpDown : MonoBehaviour {
 
-    public Rigidbody2D enemy;
-    public Transform yStart, yStop;
-    public Vector3 spawnPoint;
-    // Use this for initialization
-    void Start () {
+    int direction = 1; //int direction where 0 is stay, 1 up, -1 down    
+    int top = 6;
+    int bottom = -7;
+
+    float speed = 5;
+    Rigidbody2D enemy;
+
+    void Start()
+    {
         enemy = GetComponent<Rigidbody2D>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        if (enemy.position.y < yStop.position.y)
-        {
-            enemy.gravityScale = -0.3f;
-        }
-        if (enemy.position.y >= yStart.position.y)
-        {
-            enemy.gravityScale = 0.3f;
-        }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void Update()
     {
-        if (collision.transform.tag == "Gracz1")
+        if (transform.position.y >= top)
         {
+            enemy.gravityScale = 1;
+            direction = -1;
+        }
             
+
+        if (transform.position.y <= bottom)
+        {
+            enemy.gravityScale = -1;
+            direction = 1;
+        }
+
+
+        transform.Translate(0, speed * direction * Time.deltaTime, 0);
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.name == "Gracz1")
+        {
             Destroy(gameObject);
         }
     }

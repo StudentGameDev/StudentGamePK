@@ -9,6 +9,11 @@ TagManager:
   - CheckPoint
   - NextLevel
   - Boss1
+  - Spike1
+  - Spike2
+  - Saw1
+  - Mace1
+  - Postac1
   layers:
   - Default
   - TransparentFX

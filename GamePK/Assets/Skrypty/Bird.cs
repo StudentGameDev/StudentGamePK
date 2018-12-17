@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Bird : MonoBehaviour {
-    public Vector3 spawnPoint;
+
+    public Vector3 respawnPoint;
     public float speed;
     private Rigidbody2D enemy;
     public Transform startX;
     public Transform stopX;
     public bool right;
+    CheckPoint checkPoint = new CheckPoint();
 
     void Start()
     {
         enemy = GetComponent<Rigidbody2D>();
         right = true;
+        respawnPoint = checkPoint.transform.position;
     }
 
     void Update()
@@ -42,20 +45,19 @@ public class Bird : MonoBehaviour {
         }
     }
 
-     void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.name == "Gracz1")
+        if (collision.name == "Gracz1")
         {
             Destroy(gameObject);
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.transform.tag == "Gracz1")
-        {
-            collision.transform.position = spawnPoint;
-            //Destroy(gameObject);
-        }
-    }
+    //void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.transform.tag == "Gracz1")
+    //    {
+    //        collision.transform.position = respawnPoint;
+    //    }
+    //}
 }

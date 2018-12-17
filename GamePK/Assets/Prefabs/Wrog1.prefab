@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 61679465124393962}
   m_Layer: 0
   m_Name: Postac1
-  m_TagString: Untagged
+  m_TagString: Postac1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,7 +43,7 @@ GameObject:
   m_Layer: 0
   m_Name: StopX
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -73,7 +73,7 @@ GameObject:
   m_Layer: 0
   m_Name: StartX
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -84,7 +84,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1928917563156146}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -34.38, y: 7.02, z: -0.43945312}
+  m_LocalPosition: {x: -80.95, y: 5.45, z: -0.43945312}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4679370823041030}
@@ -164,7 +164,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.2394979}
+  m_Offset: {x: 0.012181282, y: -0.14201045}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -175,7 +175,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 1.0910044}
+  m_Size: {x: 2.6705341, y: 1.2859793}
   m_EdgeRadius: 0
 --- !u!68 &68486149111283314
 EdgeCollider2D:
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f071669bf7b1b04ab7b6435fef5bd23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {x: 0, y: 0, z: 0}
+  respawnPoint: {x: 0, y: 0, z: 0}
   speed: 2
   startX: {fileID: 4674199025453524}
   stopX: {fileID: 4993702775787338}
