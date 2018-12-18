@@ -8,13 +8,13 @@ public class Enemy : MonoBehaviour {
 
     public Rigidbody2D player, enemy;
     public Transform xStart;
-    public Vector3 respawnPoint;
+    //public Vector3 respawnPoint;
 
     // Use this for initialization
     void Start () {
         enemy = GetComponent<Rigidbody2D>();
         enemy.gravityScale = 0;
-        respawnPoint = checkPoint.transform.position;
+        //respawnPoint = checkPoint.transform.position;
 	}
 	
 	// Update is called once per frame

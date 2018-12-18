@@ -10,13 +10,13 @@ public class Bird : MonoBehaviour {
     public Transform startX;
     public Transform stopX;
     public bool right;
-    CheckPoint checkPoint = new CheckPoint();
+   //CheckPoint checkPoint = new CheckPoint();
 
     void Start()
     {
         enemy = GetComponent<Rigidbody2D>();
         right = true;
-        respawnPoint = checkPoint.transform.position;
+        //respawnPoint = checkPoint.transform.position;
     }
 
     void Update()

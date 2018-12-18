@@ -26,7 +26,10 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //if(health == 0)
+        //{
+        //    health = 3;
+        //}
     }
 
     public void Respawn()
@@ -43,9 +46,9 @@ public class LevelManager : MonoBehaviour
 
     public void LessHealth()
     {
-        health -= 1;
+        health = health - 1;
 
-        bool isAlive = CheckHealth();
+        bool isAlive = CheckHealth(health);
 
         if (!isAlive)
         {
@@ -54,9 +57,9 @@ public class LevelManager : MonoBehaviour
 
     }
 
-    public bool CheckHealth()
+    public bool CheckHealth(int h)
     {
-        switch (health)
+        switch (h)
         {
             case 3:
                 heart1.gameObject.SetActive(true);
@@ -85,7 +88,6 @@ public class LevelManager : MonoBehaviour
         heart2.gameObject.SetActive(false);
         heart3.gameObject.SetActive(false);
         gameOver.gameObject.SetActive(true);
-        Time.timeScale = 0;
         SceneManager.LoadScene(backToMenu);
         Debug.Log("LAMISZ CIENIASIE!");
     }

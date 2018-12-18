@@ -110,8 +110,8 @@ public class Player : MonoBehaviour
     {
         if (other.tag == "FallDetector")
         {
-            gameLevelManager.Respawn();
             gameLevelManager.LessHealth();
+            gameLevelManager.Respawn();
         }
         if (other.tag == "CheckPoint")
         {
