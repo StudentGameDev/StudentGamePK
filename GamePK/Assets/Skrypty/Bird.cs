@@ -10,26 +10,22 @@ public class Bird : MonoBehaviour {
     public Transform startX;
     public Transform stopX;
     public bool right;
-   //CheckPoint checkPoint = new CheckPoint();
 
     void Start()
     {
         enemy = GetComponent<Rigidbody2D>();
         right = true;
-        //respawnPoint = checkPoint.transform.position;
     }
 
     void Update()
     {
         if (enemy.position.x < startX.position.x)
         {
-            // idz w prawo
             right = true;
         }
 
         if (enemy.position.x > stopX.position.x)
         {
-            // idz w lewo
             right = false;
         }
 
