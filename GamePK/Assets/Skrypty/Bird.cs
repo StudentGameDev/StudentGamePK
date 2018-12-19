@@ -46,6 +46,7 @@ public class Bird : MonoBehaviour {
         if (collision.name == "Gracz1")
         {
             Destroy(gameObject);
+            ScoreScript.coinAmount += 20;
         }
     }
 }

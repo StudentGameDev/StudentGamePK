@@ -117,15 +117,10 @@ public class Player : MonoBehaviour
         {
             respawnPoint = other.transform.position;
         }
-        if (other.tag == "Mace1" || other.tag == "Mace2" || other.tag == "Saw1" || other.tag == "Spike1" || other.tag == "Spike2")
+        if (other.tag == "Mace1" || other.tag == "Mace2" || other.tag == "Saw1" || other.tag == "Spike1" || other.tag == "Spike2" || other.tag == "Spike_Up1")
         {
             gameObject.transform.position = respawnPoint;
-        }
-        //if ()
-        //{
-        //    Destroy(GameObject.FindWithTag("Saw1"));
-        //}
-        
+        } 
     }
 
     // kolizja z ptakami
