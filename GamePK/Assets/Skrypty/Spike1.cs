@@ -6,8 +6,6 @@ public class Spike1 : MonoBehaviour {
 
     public Rigidbody2D player, spikeOne;
 
-    public Vector3 spawnPoint;
-
     // Use this for initialization
     void Start()
     {
@@ -21,10 +19,4 @@ public class Spike1 : MonoBehaviour {
         if (player.position.x >= 77)
             spikeOne.gravityScale = 1;
     }
-
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.name == "Gracz1")
-            Destroy(gameObject);
-    } 
 }

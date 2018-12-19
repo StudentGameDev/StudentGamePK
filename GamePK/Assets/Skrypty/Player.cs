@@ -117,21 +117,18 @@ public class Player : MonoBehaviour
         {
             respawnPoint = other.transform.position;
         }
-        if(other.tag == "Saw1")
-        {
-            Destroy(GameObject.FindWithTag("Saw1"));
-        }
-        if(other.tag == "Mace1")
+        if (other.tag == "Mace1" || other.tag == "Mace2" || other.tag == "Saw1" || other.tag == "Spike1" || other.tag == "Spike2")
         {
             gameObject.transform.position = respawnPoint;
         }
-        //if (other.tag == "Postac1")
+        //if ()
         //{
-        //    Destroy(GameObject.FindWithTag("Postac1"));
-        //    //gameObject.transform.position = respawnPoint;
+        //    Destroy(GameObject.FindWithTag("Saw1"));
         //}
+        
     }
 
+    // kolizja z ptakami
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.tag == "Postac1")

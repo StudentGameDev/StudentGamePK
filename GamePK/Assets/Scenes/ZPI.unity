@@ -5933,7 +5933,7 @@ GameObject:
   - component: {fileID: 758647509}
   m_Layer: 0
   m_Name: Mace2
-  m_TagString: Untagged
+  m_TagString: Mace2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8295,7 +8295,6 @@ GameObject:
   - component: {fileID: 1092167112}
   - component: {fileID: 1092167111}
   - component: {fileID: 1092167110}
-  - component: {fileID: 1092167113}
   m_Layer: 0
   m_Name: Spike2
   m_TagString: Spike2
@@ -8412,18 +8411,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1092167113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1092167108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27438b3a0f4fdc64d8467e4cf3ea2d48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spikeTwo: {fileID: 1092167110}
 --- !u!1001 &1106737955
 Prefab:
   m_ObjectHideFlags: 0

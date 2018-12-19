@@ -35,11 +35,11 @@ public class EnemyUpDown : MonoBehaviour {
         transform.Translate(0, speed * direction * Time.deltaTime, 0);
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.name == "Gracz1")
-        {
-            Destroy(gameObject);
-        }
-    }
+    //void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.name == "Gracz1")
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //}
 }
