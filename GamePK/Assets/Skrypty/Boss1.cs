@@ -12,6 +12,7 @@ public class Boss1 : MonoBehaviour {
     public Vector3 spawnPoint;
     public EnergyBoss energyBoss;
 
+
     //public float bossHealth;
 
     void Start()
@@ -21,7 +22,6 @@ public class Boss1 : MonoBehaviour {
         anim = GetComponent<Animator>();
         isRight = true;
         speed = 5;
-        //bossHealth = 3;
     }
 
     void Update()
@@ -46,9 +46,7 @@ public class Boss1 : MonoBehaviour {
             ChangeAnimation();
             if(isRight)
                 transform.localScale = new Vector3(-1f, 1f, 1f);
-        }
-
-        
+        } 
     }
 
     void OnCollisionEnter2D(Collision2D collision) // kolizja gracza z mieczem
@@ -60,8 +58,9 @@ public class Boss1 : MonoBehaviour {
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collision) // pokonanie bossa
+    void OnTriggerEnter2D(Collider2D collision) // pokonanie bossa, edge collider
     {
+
         if (collision.name == "Gracz1")
         {
             energyBoss.ChangeEnergyBoss(-1);
