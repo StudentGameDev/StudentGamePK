@@ -129,7 +129,7 @@ public class Player : MonoBehaviour
         if (collision.transform.tag == "Postac1")
             gameObject.transform.position = respawnPoint;
         
-        if(collision.transform.tag == "Boss1")
+        if(collision.transform.tag == "Boss1" && grounded) // gdy kolizja z mieczem i gracz jest na "ziemi" to wykonaj respawn
             gameObject.transform.position = respawnPoint;
 
     }  
