@@ -12,6 +12,10 @@ public class Boss1 : MonoBehaviour {
     public Vector3 spawnPoint;
     public EnergyBoss energyBoss;
 
+    [SerializeField]
+    private PolygonCollider2D[] colliders;
+    private int currentColliderIndex = 0;
+
 
     //public float bossHealth;
 
@@ -49,18 +53,17 @@ public class Boss1 : MonoBehaviour {
         } 
     }
 
-    void OnCollisionEnter2D(Collision2D collision) // kolizja gracza z mieczem
+    public void SetColliderForSprite(int spriteNum)
     {
-        if (collision.transform.tag == "Gracz1")
-        {
-            collision.transform.position = spawnPoint;
-            //Destroy(gameObject);
-        }
+        colliders[currentColliderIndex].enabled = false;
+        currentColliderIndex = spriteNum;
+        colliders[currentColliderIndex].enabled = true;
     }
+
+   
 
     void OnTriggerEnter2D(Collider2D collision) // pokonanie bossa, edge collider
     {
-
         if (collision.name == "Gracz1")
         {
             energyBoss.ChangeEnergyBoss(-1);

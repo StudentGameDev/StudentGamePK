@@ -127,8 +127,10 @@ public class Player : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.tag == "Postac1")
-        {
             gameObject.transform.position = respawnPoint;
-        }
+        
+        if(collision.transform.tag == "Boss1")
+            gameObject.transform.position = respawnPoint;
+
     }  
 }
