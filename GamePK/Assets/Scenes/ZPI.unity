@@ -12893,6 +12893,7 @@ MonoBehaviour:
   stopX: {fileID: 64530405}
   isRight: 0
   spawnPoint: {x: 180, y: 0, z: 0}
+  bossHealth: 0
 --- !u!50 &1457032431
 Rigidbody2D:
   serializedVersion: 4
@@ -17871,6 +17872,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2053476916}
+  - component: {fileID: 2053476917}
   m_Layer: 0
   m_Name: BossHealth
   m_TagString: Untagged
@@ -17885,7 +17887,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2053476915}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 141.39008, y: 110.25107, z: 9473.018}
+  m_LocalPosition: {x: 141.39008, y: 116, z: 9473.018}
   m_LocalScale: {x: 56.65559, y: 56.65559, z: 56.65559}
   m_Children:
   - {fileID: 1178800504}
@@ -17894,6 +17896,21 @@ Transform:
   m_Father: {fileID: 632218952}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2053476917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2053476915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 910a833e62313fd46bb76abdc80362c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossHealth: 3
+  BossLife1: {fileID: 0}
+  BossLife2: {fileID: 0}
+  BossLife3: {fileID: 0}
 --- !u!1 &2058364065
 GameObject:
   m_ObjectHideFlags: 0

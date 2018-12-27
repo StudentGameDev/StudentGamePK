@@ -11,12 +11,15 @@ public class Boss1 : MonoBehaviour {
     public bool isRight;
     public Vector3 spawnPoint;
 
+    public float bossHealth;
+
     void Start()
     {
         boss = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         isRight = true;
         speed = 5;
+        bossHealth = 3;
     }
 
     void Update()
@@ -46,7 +49,7 @@ public class Boss1 : MonoBehaviour {
         
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision) // kolizja gracza z mieczem
     {
         if (collision.transform.tag == "Gracz1")
         {
@@ -55,11 +58,13 @@ public class Boss1 : MonoBehaviour {
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision) // pokonanie bossa
     {
         if (collision.name == "Gracz1")
         {
-            Destroy(gameObject);
+            bossHealth = bossHealth - 1;
+            if(bossHealth == 0)
+                Destroy(gameObject);
         }
     }
 
@@ -95,4 +100,6 @@ public class Boss1 : MonoBehaviour {
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
     }
+
+    
 }
