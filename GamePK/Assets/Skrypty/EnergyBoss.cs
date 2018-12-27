@@ -4,28 +4,39 @@ using UnityEngine;
 
 public class EnergyBoss : MonoBehaviour {
 
-    public float bossHealth;
+    private int bossHealth { get; set; }
+
     public GameObject BossLife1;
     public GameObject BossLife2;
     public GameObject BossLife3;
 
-    Boss1 boss1;
+    public Boss1 boss1;
 
     // Use this for initialization
     void Start () {
         BossLife1 = GameObject.Find("BossLife1");
         BossLife2 = GameObject.Find("BossLife2");
         BossLife3 = GameObject.Find("BossLife3");
-        boss1 = FindObjectOfType<Boss1>();
+        boss1 = FindObjectOfType<Boss1>();   // wyszukaj skrypt Boss1
+        bossHealth = 3;
     }
 	
 	// Update is called once per frame
 	void Update () {
         BossLife();
-        bossHealth = boss1.bossHealth;
     }
 
-    void BossLife(/*float energyBoss*/)
+    public void ChangeEnergyBoss(int energyValue)
+    {
+        bossHealth += energyValue;
+    }
+
+    public int QuantityOfEnergy()
+    {
+        return bossHealth;
+    }
+
+    void BossLife()
     {
         if (bossHealth == 3)
             BossLife3.GetComponent<Renderer>().enabled = true;

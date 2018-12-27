@@ -10,16 +10,18 @@ public class Boss1 : MonoBehaviour {
     public Transform startX, stopX;
     public bool isRight;
     public Vector3 spawnPoint;
+    public EnergyBoss energyBoss;
 
-    public float bossHealth;
+    //public float bossHealth;
 
     void Start()
     {
+        energyBoss = FindObjectOfType<EnergyBoss>();
         boss = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         isRight = true;
         speed = 5;
-        bossHealth = 3;
+        //bossHealth = 3;
     }
 
     void Update()
@@ -62,8 +64,8 @@ public class Boss1 : MonoBehaviour {
     {
         if (collision.name == "Gracz1")
         {
-            bossHealth = bossHealth - 1;
-            if(bossHealth == 0)
+            energyBoss.ChangeEnergyBoss(-1);
+            if(energyBoss.QuantityOfEnergy() == 0)
                 Destroy(gameObject);
         }
     }
