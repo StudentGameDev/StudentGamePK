@@ -9964,7 +9964,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 4c490911fb9688b4d802eefb39f45277, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -11554,7 +11554,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 4c490911fb9688b4d802eefb39f45277, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -12788,7 +12788,6 @@ GameObject:
   - component: {fileID: 1457032428}
   - component: {fileID: 1457032430}
   - component: {fileID: 1457032431}
-  - component: {fileID: 1457032433}
   - component: {fileID: 1457032432}
   m_Layer: 0
   m_Name: Boss
@@ -12893,7 +12892,7 @@ MonoBehaviour:
   stopX: {fileID: 64530405}
   isRight: 0
   spawnPoint: {x: 180, y: 0, z: 0}
-  bossHealth: 0
+  energyBoss: {fileID: 0}
 --- !u!50 &1457032431
 Rigidbody2D:
   serializedVersion: 4
@@ -12929,34 +12928,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.58636475, y: 0.1569483}
-  - {x: 0.1504364, y: 0.23483157}
-  - {x: 0.8816376, y: 0.15694758}
---- !u!61 &1457032433
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1457032426}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 1.0165558, y: -1.1020852}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 7.85, y: 3.93}
-    newSize: {x: 7.85, y: 3.93}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.219696, y: 1.7258294}
-  m_EdgeRadius: 0
+  - {x: -0.63087463, y: 0.41046706}
+  - {x: 0.82702637, y: 0.39427227}
 --- !u!1 &1465671866
 GameObject:
   m_ObjectHideFlags: 0
@@ -17907,10 +17880,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 910a833e62313fd46bb76abdc80362c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossHealth: 3
   BossLife1: {fileID: 0}
   BossLife2: {fileID: 0}
   BossLife3: {fileID: 0}
+  boss1: {fileID: 0}
 --- !u!1 &2058364065
 GameObject:
   m_ObjectHideFlags: 0
@@ -18154,7 +18127,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 4c490911fb9688b4d802eefb39f45277, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
