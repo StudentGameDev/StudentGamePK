@@ -119,7 +119,8 @@ public class Player : MonoBehaviour
         }
         if (other.tag == "Mace1" || other.tag == "Mace2" || other.tag == "Saw1" || other.tag == "Spike1" || other.tag == "Spike2" || other.tag == "Spike_Up1")
         {
-            gameObject.transform.position = respawnPoint;
+            gameLevelManager.LessHealth();
+            gameLevelManager.Respawn();
         } 
     }
 
@@ -127,10 +128,15 @@ public class Player : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.tag == "Postac1")
-            gameObject.transform.position = respawnPoint;
+        {
+            gameLevelManager.LessHealth();
+            gameLevelManager.Respawn();
+        }
         
         if(collision.transform.tag == "Boss1" && grounded) // gdy kolizja z mieczem i gracz jest na "ziemi" to wykonaj respawn
-            gameObject.transform.position = respawnPoint;
-
+        {
+            gameLevelManager.LessHealth();
+            gameLevelManager.Respawn();
+        }
     }  
 }

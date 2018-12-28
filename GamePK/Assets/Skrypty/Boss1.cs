@@ -38,19 +38,14 @@ public class Boss1 : MonoBehaviour {
             anim.SetFloat("Speed", predkoscZmianaAnimacji);
             
         }
-            
-        else if(player.position.x > (boss.position.x - 4.5))
+        else if (player.position.x > (boss.position.x - 4.5) || player.position.x < (boss.position.x + 4.5))
         {
             ChangeAnimation();
             if(isRight)
+                transform.localScale = new Vector3(1f, 1f, 1f);
+            else
                 transform.localScale = new Vector3(-1f, 1f, 1f);
         }
-        else if(player.position.x < (boss.position.x + 4.5))
-        {
-            ChangeAnimation();
-            if(isRight)
-                transform.localScale = new Vector3(-1f, 1f, 1f);
-        } 
     }
 
     public void SetColliderForSprite(int spriteNum)
