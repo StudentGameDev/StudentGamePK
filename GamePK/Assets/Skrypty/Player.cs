@@ -108,20 +108,19 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "FallDetector")
-        {
-            gameLevelManager.LessHealth();
-            gameLevelManager.Respawn();
-        }
         if (other.tag == "CheckPoint")
         {
             respawnPoint = other.transform.position;
         }
-        if (other.tag == "Mace1" || other.tag == "Mace2" || other.tag == "Saw1" || other.tag == "Spike1" || other.tag == "Spike2" || other.tag == "Spike_Up1")
+        if (other.tag == "FallDetector" || other.tag == "Mace1" || other.tag == "Mace2" || other.tag == "Saw1" || other.tag == "Spike1" || other.tag == "Spike2" || other.tag == "Spike_Up1")
         {
-            gameLevelManager.LessHealth();
-            gameLevelManager.Respawn();
-        } 
+            gameLevelManager.ChangeEnergyBoss(-1);
+            if (gameLevelManager.QuantityOfEnergy() == 0)
+                gameLevelManager.GameOver();
+            else
+                gameObject.transform.position = respawnPoint;
+        }
+
     }
 
     // kolizja z ptakami
@@ -129,14 +128,20 @@ public class Player : MonoBehaviour
     {
         if (collision.transform.tag == "Postac1")
         {
-            gameLevelManager.LessHealth();
-            gameLevelManager.Respawn();
+            gameLevelManager.ChangeEnergyBoss(-1);
+            if (gameLevelManager.QuantityOfEnergy() == 0)
+                gameLevelManager.GameOver();
+            else
+                gameObject.transform.position = respawnPoint;
         }
-        
-        if(collision.transform.tag == "Boss1" && grounded) // gdy kolizja z mieczem i gracz jest na "ziemi" to wykonaj respawn
+
+        if (collision.transform.tag == "Boss1" && grounded) // gdy kolizja z mieczem i gracz jest na "ziemi" to wykonaj respawn
         {
-            gameLevelManager.LessHealth();
-            gameLevelManager.Respawn();
+            gameLevelManager.ChangeEnergyBoss(-1);
+            if (gameLevelManager.QuantityOfEnergy() == 0)
+                gameLevelManager.GameOver();
+            else
+                gameObject.transform.position = respawnPoint;
         }
     }  
 }

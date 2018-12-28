@@ -4,91 +4,66 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField]
+    private int playerHealth { get; set; }
     public float respawnDelay;
-    public Player player;
-    public GameObject heart1, heart2, heart3, gameOver;
-    public int health;
     public string backToMenu;
+
+    public GameObject heart1;
+    public GameObject heart2;
+    public GameObject heart3;
+    public GameObject gameOver;
+
+    public Player player;
 
     // Use this for initialization
     void Start()
     {
-        player = FindObjectOfType<Player>();
-        health = 3;
-        heart1.gameObject.SetActive(true);
-        heart2.gameObject.SetActive(true);
-        heart3.gameObject.SetActive(true);
+        heart1 = GameObject.Find("heart1");
+        heart2 = GameObject.Find("heart2");
+        heart3 = GameObject.Find("heart3");
+        player = FindObjectOfType<Player>();   // wyszukaj skrypt Boss1
+        playerHealth = 3;
         gameOver.gameObject.SetActive(false);
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if(health == 0)
-        //{
-        //    health = 3;
-        //}
+        BossLife();
     }
 
-    public void Respawn()
+    public void ChangeEnergyBoss(int energyValue)
     {
-        StartCoroutine("RespawnCoroutine");
-    }
-    public IEnumerator RespawnCoroutine()
-    {
-        player.gameObject.SetActive(false);
-        yield return new WaitForSeconds(respawnDelay);
-        player.transform.position = player.respawnPoint;
-        player.gameObject.SetActive(true);
+        playerHealth += energyValue;
     }
 
-    public void LessHealth()
+    public int QuantityOfEnergy()
     {
-        health = health - 1;
-
-        bool isAlive = CheckHealth(health);
-
-        if (!isAlive)
-        {
-            GameOver();
-        }
-
+        return playerHealth;
     }
 
-    public bool CheckHealth(int h)
+    void BossLife()
     {
-        switch (h)
-        {
-            case 3:
-                heart1.gameObject.SetActive(true);
-                heart2.gameObject.SetActive(true);
-                heart3.gameObject.SetActive(true);
-                return true;
-            case 2:
-                heart1.gameObject.SetActive(true);
-                heart2.gameObject.SetActive(true);
-                heart3.gameObject.SetActive(false);
-                return true;
-            case 1:
-                heart1.gameObject.SetActive(true);
-                heart2.gameObject.SetActive(false);
-                heart3.gameObject.SetActive(false);
-                return true;
-            case 0:
-                return false;
-        }
-        return false;
+        if (playerHealth == 3)
+            heart3.GetComponent<Renderer>().enabled = true;
+        else
+            heart3.GetComponent<Renderer>().enabled = false;
+
+        if (playerHealth >= 2)
+            heart2.GetComponent<Renderer>().enabled = true;
+        else
+            heart2.GetComponent<Renderer>().enabled = false;
+
+        if (playerHealth >= 1)
+            heart1.GetComponent<Renderer>().enabled = true;
+        else
+            heart1.GetComponent<Renderer>().enabled = false;
     }
 
     public void GameOver()
     {
-        heart1.gameObject.SetActive(false);
-        heart2.gameObject.SetActive(false);
-        heart3.gameObject.SetActive(false);
         gameOver.gameObject.SetActive(true);
         SceneManager.LoadScene(backToMenu);
         Debug.Log("LAMISZ CIENIASIE!");
     }
-}
+} // end class LevelManager
