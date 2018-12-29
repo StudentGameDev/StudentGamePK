@@ -7,9 +7,16 @@ public class MoveToLevel2 : MonoBehaviour {
 
     [SerializeField] private string nextLevelWinter;
 
+    public EnergyBoss energyBoss;
+
+    private void Start()
+    {
+        energyBoss = FindObjectOfType<EnergyBoss>();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Gracz1"))
+        if (collision.CompareTag("Gracz1") && energyBoss.QuantityOfEnergy() <= 0)
         {
             SceneManager.LoadScene(nextLevelWinter);
         }
