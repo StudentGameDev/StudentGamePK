@@ -112,13 +112,9 @@ public class Player : MonoBehaviour
         {
             respawnPoint = other.transform.position;
         }
-        if (other.tag == "FallDetector" || other.tag == "Mace1" || other.tag == "Mace2" || other.tag == "Saw1" || other.tag == "Spike1" || other.tag == "Spike2" || other.tag == "Spike_Up1")
+        if (/*other.tag == "FallDetector" ||*/ other.tag == "Mace1" || other.tag == "Mace2" || other.tag == "Saw1" || other.tag == "Spike1" || other.tag == "Spike2" || other.tag == "Spike_Up1")
         {
-            gameLevelManager.ChangeEnergyBoss(-1);
-            if (gameLevelManager.QuantityOfEnergy() == 0)
-                gameLevelManager.GameOver();
-            else
-                gameObject.transform.position = respawnPoint;
+            RespawnAndHealth();
         }
 
     }
@@ -126,22 +122,29 @@ public class Player : MonoBehaviour
     // kolizja z ptakami
     void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.transform.tag == "FallDetector")
+        {
+            RespawnAndHealth();
+        }
+
         if (collision.transform.tag == "Postac1")
         {
-            gameLevelManager.ChangeEnergyBoss(-1);
-            if (gameLevelManager.QuantityOfEnergy() == 0)
-                gameLevelManager.GameOver();
-            else
-                gameObject.transform.position = respawnPoint;
+            RespawnAndHealth();
         }
 
         if (collision.transform.tag == "Boss1" && grounded) // gdy kolizja z mieczem i gracz jest na "ziemi" to wykonaj respawn
         {
-            gameLevelManager.ChangeEnergyBoss(-1);
-            if (gameLevelManager.QuantityOfEnergy() == 0)
-                gameLevelManager.GameOver();
-            else
-                gameObject.transform.position = respawnPoint;
+            RespawnAndHealth();
         }
     }  
+
+    private void RespawnAndHealth()
+    {
+        gameLevelManager.ChangeEnergyBoss(-1);
+
+        if (gameLevelManager.QuantityOfEnergy() == 0)
+            gameLevelManager.GameOver();
+        else
+            gameObject.transform.position = respawnPoint;
+    }
 }

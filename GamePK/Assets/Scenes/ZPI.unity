@@ -1264,6 +1264,16 @@ Prefab:
       propertyPath: m_NormalizedViewPortRect.width
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 61229540674787238, guid: 85c43ce921b43d2468a112e8d8195aae,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61229540674787238, guid: 85c43ce921b43d2468a112e8d8195aae,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85c43ce921b43d2468a112e8d8195aae, type: 2}
   m_IsPrefabAsset: 0
@@ -3731,6 +3741,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4454712999071606, guid: f63b09ec99ef457429c062cbdca35208,
     type: 2}
   m_PrefabInternal: {fileID: 1608664277}
+--- !u!1 &389041138 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1906983412893612, guid: 85c43ce921b43d2468a112e8d8195aae,
+    type: 2}
+  m_PrefabInternal: {fileID: 134099246}
+--- !u!68 &389041139
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 389041138}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.5, y: 0}
+  - {x: 0.5, y: 0}
 --- !u!1 &394729272
 GameObject:
   m_ObjectHideFlags: 0
