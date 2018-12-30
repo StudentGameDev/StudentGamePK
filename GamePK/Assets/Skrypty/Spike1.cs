@@ -16,7 +16,7 @@ public class Spike1 : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (player.position.x >= 77)
+        if (spikeOne.position.x - player.position.x < 2)
             spikeOne.gravityScale = 1;
     }
 }

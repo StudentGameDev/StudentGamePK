@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    private int playerHealth { get; set; }
     public float respawnDelay;
     public string backToMenu;
 
@@ -22,7 +21,7 @@ public class LevelManager : MonoBehaviour
         heart2 = GameObject.Find("heart2");
         heart3 = GameObject.Find("heart3");
         player = FindObjectOfType<Player>();   // wyszukaj skrypt Boss1
-        playerHealth = 3;
+        ScoreScript.playerHealth = 3;
         gameOver.gameObject.SetActive(false);
     }
 
@@ -34,36 +33,48 @@ public class LevelManager : MonoBehaviour
 
     public void ChangeEnergyBoss(int energyValue)
     {
-        playerHealth += energyValue;
+        ScoreScript.playerHealth += energyValue;
     }
 
     public int QuantityOfEnergy()
     {
-        return playerHealth;
+        return ScoreScript.playerHealth;
     }
 
     void BossLife()
     {
-        if (playerHealth == 3)
+        if (ScoreScript.playerHealth == 3)
             heart3.GetComponent<Renderer>().enabled = true;
         else
             heart3.GetComponent<Renderer>().enabled = false;
 
-        if (playerHealth >= 2)
+        if (ScoreScript.playerHealth >= 2)
             heart2.GetComponent<Renderer>().enabled = true;
         else
             heart2.GetComponent<Renderer>().enabled = false;
 
-        if (playerHealth >= 1)
+        if (ScoreScript.playerHealth >= 1)
             heart1.GetComponent<Renderer>().enabled = true;
         else
             heart1.GetComponent<Renderer>().enabled = false;
     }
 
-    public void GameOver()
+    public void GameOver(AudioSource deathSource)
     {
         gameOver.gameObject.SetActive(true);
+        ScoreScript.SaveScoreTofile();
+        StartCoroutine(example(deathSource));
+    }
+
+
+    IEnumerator example(AudioSource deathSource)
+    {
+        Destroy(player);
+        deathSource.Play();
+        yield return new WaitForSeconds(deathSource.clip.length);
+
         SceneManager.LoadScene(backToMenu);
         Debug.Log("LAMISZ CIENIASIE!");
+
     }
 } // end class LevelManager

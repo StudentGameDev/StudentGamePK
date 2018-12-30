@@ -18,6 +18,7 @@ public class MoveToLevel2 : MonoBehaviour {
     {
         if (collision.CompareTag("Gracz1") && energyBoss.QuantityOfEnergy() <= 0)
         {
+            ScoreScript.SaveCurrentStateToFile();
             SceneManager.LoadScene(nextLevelWinter);
         }
     }

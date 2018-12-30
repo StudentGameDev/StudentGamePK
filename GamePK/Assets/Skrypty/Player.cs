@@ -1,9 +1,13 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     [SerializeField]
     AudioSource JumpSource;
+
+    [SerializeField]
+    AudioSource DeathSource;
 
     private Rigidbody2D player;
     public float playerSpeed;
@@ -61,13 +65,11 @@ public class Player : MonoBehaviour
         // Strzałka w górę
         if (Input.GetKeyDown(KeyCode.UpArrow) && grounded)
         {
-            Debug.Log("TEST");
             Jump();
         }
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && !grounded && !blockJump)
         {
-            Debug.Log("TEST");
             Jump();
             blockJump = true;
         }
@@ -112,7 +114,7 @@ public class Player : MonoBehaviour
         {
             respawnPoint = other.transform.position;
         }
-        if (/*other.tag == "FallDetector" ||*/ other.tag == "Mace1" || other.tag == "Mace2" || other.tag == "Saw1" || other.tag == "Spike1" || other.tag == "Spike2" || other.tag == "Spike_Up1")
+        if (/*other.tag == "FallDetector" || */other.tag == "Mace1" || other.tag == "Mace2" || other.tag == "Saw1" || other.tag == "Spike1" || other.tag == "Spike2" || other.tag == "Spike_Up1")
         {
             RespawnAndHealth();
         }
@@ -143,7 +145,7 @@ public class Player : MonoBehaviour
         gameLevelManager.ChangeEnergyBoss(-1);
 
         if (gameLevelManager.QuantityOfEnergy() == 0)
-            gameLevelManager.GameOver();
+            gameLevelManager.GameOver(DeathSource);       
         else
             gameObject.transform.position = respawnPoint;
     }

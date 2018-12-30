@@ -25,8 +25,6 @@ public class BGSound : MonoBehaviour {
                 instance.gameObject.GetComponent<AudioSource>().time = 0f;
                 instance.gameObject.GetComponent<AudioSource>().Play();
             }
-            //instance.gameObject.GetComponent<AudioSource>().Play();
-            //instance = this;
             return;
         }
         else
