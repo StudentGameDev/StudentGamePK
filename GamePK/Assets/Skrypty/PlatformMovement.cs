@@ -31,7 +31,6 @@ public class PlatformMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         Move();
-
     }
 
     void Move()

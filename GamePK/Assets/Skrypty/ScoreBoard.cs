@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,10 +21,18 @@ public class ScoreBoard : MonoBehaviour {
 
         using (StreamReader sr = File.OpenText(path))
         {
-            string line = "";
-            while ((line = sr.ReadLine()) != null)
+            string rowLine = "";
+            List<string> lines = new List<string>();
+            while ((rowLine = sr.ReadLine()) != null)
             {
-                GameObject itemGO = (GameObject) Instantiate(playerScoreboardItem, playerScoreboardList);
+                lines.Add(rowLine);               
+            }
+
+            lines.Reverse();
+
+            foreach (var line in lines)
+            {
+                GameObject itemGO = (GameObject)Instantiate(playerScoreboardItem, playerScoreboardList);
                 PlayerScoreboardItem item = itemGO.GetComponent<PlayerScoreboardItem>();
 
                 if (item != null)
@@ -33,8 +42,9 @@ public class ScoreBoard : MonoBehaviour {
                     {
                         item.Setup(lineElements[0], lineElements[2], lineElements[1]);
                     }
-                }                
+                }
             }
+
             scroll.verticalNormalizedPosition = 1f;
         }
     }

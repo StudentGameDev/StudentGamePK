@@ -16,6 +16,7 @@ TagManager:
   - Postac1
   - Mace2
   - Spike_Up1
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX
