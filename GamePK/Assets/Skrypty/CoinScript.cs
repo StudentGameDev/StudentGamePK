@@ -20,4 +20,10 @@ public class CoinScript : MonoBehaviour {
         AudioSource.PlayClipAtPoint(tickSource.clip, col.transform.position);
         Destroy(gameObject);
     }
+
+    public static void AddExtraPointsTime()
+    {
+        int bonusCoin = (int)LevelManager.timer * 2;
+        ScoreScript.coinAmount += bonusCoin;
+    }
 }

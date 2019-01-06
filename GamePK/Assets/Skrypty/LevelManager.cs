@@ -6,6 +6,7 @@ public class LevelManager : MonoBehaviour
 {
     public float respawnDelay;
     public string backToMenu;
+    public static float timer = 60;
 
     public GameObject heart1;
     public GameObject heart2;
@@ -28,6 +29,7 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer -= Time.deltaTime;
         BossLife();
     }
 
