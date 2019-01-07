@@ -1,12 +1,19 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using System;
 
 public class LevelManager : MonoBehaviour
 {
+
+    [SerializeField]
+    Text timeText;
+
     public float respawnDelay;
     public string backToMenu;
     public static float timer = 60;
+    public static int timerToInt;
 
     public GameObject heart1;
     public GameObject heart2;
@@ -29,7 +36,17 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime;
+
+        if (timer >= 1)
+        {
+            timer -= Time.deltaTime;
+            timerToInt = Mathf.FloorToInt(timer);
+        }
+        else
+            timerToInt = 0;
+
+        timeText.text = timerToInt.ToString();
+
         BossLife();
     }
 

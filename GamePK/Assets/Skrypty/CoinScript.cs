@@ -23,7 +23,7 @@ public class CoinScript : MonoBehaviour {
 
     public static void AddExtraPointsTime()
     {
-        int bonusCoin = (int)LevelManager.timer * 2;
+        int bonusCoin = LevelManager.timerToInt * 2;
         ScoreScript.coinAmount += bonusCoin;
     }
 }
