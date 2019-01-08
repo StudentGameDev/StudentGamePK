@@ -17,6 +17,7 @@ TagManager:
   - Mace2
   - Spike_Up1
   - MovingPlatform
+  - BlueBird
   layers:
   - Default
   - TransparentFX
