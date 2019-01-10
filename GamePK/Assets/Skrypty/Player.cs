@@ -167,7 +167,10 @@ public class Player : MonoBehaviour
         gameLevelManager.ChangeEnergyBoss(-1);
 
         if (gameLevelManager.QuantityOfEnergy() == 0)
-            gameLevelManager.GameOver(DeathSource);       
+        {
+            anim.SetBool("Death", true);
+            gameLevelManager.GameOver(DeathSource);
+        }
         else
             gameObject.transform.position = respawnPoint;
     }
