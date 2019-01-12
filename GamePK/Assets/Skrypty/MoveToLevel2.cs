@@ -14,17 +14,26 @@ public class MoveToLevel2 : MonoBehaviour
 
     private void Start()
     {
-        energyBoss = FindObjectOfType<EnergyBoss>();
+        //energyBoss = FindObjectOfType<EnergyBoss>();
     }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Gracz1") && energyBoss.QuantityOfEnergy() <= 0)
+        if (collision.CompareTag("Gracz1") && BossDefeated())
         {
             CoinScript.AddExtraPointsTime();
             ScoreScript.SaveCurrentStateToFile();            
             SceneManager.LoadScene(nextLevelWinter);
         }
+    }
+
+    private bool BossDefeated()
+    {
+        bool result = true;
+        if (energyBoss != null)
+            result = energyBoss.QuantityOfEnergy() <= 0;
+
+        return result;
     }
 }

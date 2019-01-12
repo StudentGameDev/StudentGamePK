@@ -8861,6 +8861,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114194872914132556, guid: fd3666951410e6d42bd7fd67f9429567,
+        type: 2}
+      propertyPath: energyBoss
+      value: 
+      objectReference: {fileID: 1174264355}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd3666951410e6d42bd7fd67f9429567, type: 2}
   m_IsPrefabAsset: 0
