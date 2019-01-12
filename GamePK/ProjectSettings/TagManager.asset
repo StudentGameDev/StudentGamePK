@@ -18,6 +18,7 @@ TagManager:
   - Spike_Up1
   - MovingPlatform
   - BlueBird
+  - WinterBoss
   layers:
   - Default
   - TransparentFX

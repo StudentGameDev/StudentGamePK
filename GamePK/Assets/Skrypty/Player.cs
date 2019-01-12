@@ -137,6 +137,11 @@ public class Player : MonoBehaviour
         {
             RespawnAndHealth();
         }
+
+        if (collision.transform.tag == "WinterBoss")
+        {
+            RespawnAndHealth();
+        }
     }
 
 
@@ -172,6 +177,9 @@ public class Player : MonoBehaviour
             gameLevelManager.GameOver(DeathSource);
         }
         else
+        {
             gameObject.transform.position = respawnPoint;
+        }
+        gameLevelManager.Restart();
     }
 }

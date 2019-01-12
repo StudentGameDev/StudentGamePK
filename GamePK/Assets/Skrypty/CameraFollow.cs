@@ -15,10 +15,14 @@ public class CameraFollow : MonoBehaviour {
     private float yMin;
 
     public Rigidbody2D player;
+    public string LevelNr;
 
 	
 	// Update is called once per frame
 	void Update () {
-        transform.position = new Vector3(Mathf.Clamp(player.transform.position.x, xMin, xMax), Mathf.Clamp(player.transform.position.y, yMin, yMax), transform.position.z);
+        if (LevelNr == "2")
+            transform.position = new Vector3(Mathf.Clamp(player.transform.position.x, xMin, xMax), (Mathf.Clamp(player.transform.position.y, yMin, yMax)+2.0f), transform.position.z);
+        else
+            transform.position = new Vector3(Mathf.Clamp(player.transform.position.x, xMin, xMax), Mathf.Clamp(player.transform.position.y, yMin, yMax), transform.position.z);
     }
 }

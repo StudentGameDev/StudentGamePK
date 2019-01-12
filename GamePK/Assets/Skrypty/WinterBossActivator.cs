@@ -7,19 +7,25 @@ public class WinterBossActivator : MonoBehaviour {
     public Rigidbody2D player;
     private Animator anim;
     public Rigidbody2D winterBoss;
-    float startPosition;
+    Vector2 startPosition;
 
     // Use this for initialization
     void Start () {
-        startPosition = winterBoss.position.x;
         winterBoss.gameObject.SetActive(false);
+        startPosition = winterBoss.position;
     }
 
     // Update is called once per frame
     void Update () {
-        if (startPosition - player.position.x < 5)
+        if (player.position.x - startPosition.x > 5)
         {
             winterBoss.gameObject.SetActive(true);
         }
+    }
+
+    public void Reset()
+    {
+        winterBoss.GetComponent<WinterBoss>().Reset();
+        winterBoss.gameObject.SetActive(false);
     }
 }

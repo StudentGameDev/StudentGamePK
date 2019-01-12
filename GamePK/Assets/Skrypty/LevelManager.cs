@@ -19,6 +19,7 @@ public class LevelManager : MonoBehaviour
     public GameObject heart2;
     public GameObject heart3;
     public GameObject gameOver;
+    public GameObject boss;
 
     public Player player;
 
@@ -29,6 +30,7 @@ public class LevelManager : MonoBehaviour
         heart1 = GameObject.Find("heart1");
         heart2 = GameObject.Find("heart2");
         heart3 = GameObject.Find("heart3");
+        boss = GameObject.Find("Activator");
         player = FindObjectOfType<Player>();   // wyszukaj skrypt Boss1
         ScoreScript.playerHealth = 3;
         gameOver.gameObject.SetActive(false);
@@ -86,7 +88,6 @@ public class LevelManager : MonoBehaviour
         StartCoroutine(example(deathSource));
     }
 
-
     IEnumerator example(AudioSource deathSource)
     {
         Destroy(player);
@@ -96,5 +97,15 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(backToMenu);
         Debug.Log("LAMISZ CIENIASIE!");
 
+    }
+
+    public void Restart()
+    {
+        var r = boss.GetComponent(typeof(WinterBossActivator)) as WinterBossActivator;
+
+        if (r != null)
+        {
+            r.Reset();
+        }
     }
 } // end class LevelManager

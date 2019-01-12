@@ -9,19 +9,21 @@ public class WinterBoss : MonoBehaviour {
     private Animator anim;
     private Rigidbody2D winterBoss;
     bool run = false;
-    float startPosition;
+    Vector2 startPosition;
+    //float startPositionY;
     public float bossSpeed;
     public float bossJump;
     private bool grounded;
     public float groundIsRadius;
     public LayerMask isGround;
     public Transform checkGround;
-
+    private int[] jumpPositions = { 209, 220, 232, 238, 9999 };
+    private int jumpIndex = 0;
 
     // Use this for initialization
     void Start () {
         winterBoss = GetComponent<Rigidbody2D>();
-        startPosition = winterBoss.position.x;
+        startPosition = winterBoss.position;
         winterBoss = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         anim.SetBool("Grounded", true);
@@ -36,20 +38,25 @@ public class WinterBoss : MonoBehaviour {
 
         anim.SetBool("Grounded", grounded);
 
-        if (winterBoss.position.x > startPosition + 2 && winterBoss.position.x < startPosition + 5)
+        if (winterBoss.position.x > jumpPositions[jumpIndex])
             {
                 Jump();
-
+                jumpIndex++;
             }
             else {
                 winterBoss.velocity = new Vector2(bossSpeed, GetComponent<Rigidbody2D>().velocity.y);
             }
             anim.SetFloat("Speed", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
-
     }
 
     void Jump()
     {
         winterBoss.velocity = new Vector2(bossSpeed, bossJump);
+    }
+
+    public void Reset()
+    {
+        winterBoss.transform.position = startPosition;
+        jumpIndex = 0;
     }
 }
