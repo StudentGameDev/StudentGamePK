@@ -17,7 +17,7 @@ public class WinterBoss : MonoBehaviour {
     public float groundIsRadius;
     public LayerMask isGround;
     public Transform checkGround;
-    private int[] jumpPositions = { 209, 220, 232, 238, 9999 };
+    private int[] jumpPositions = { 209, 220, 232, 238, 294, 306, 316, 326, 335, 347, 9999 };
     private int jumpIndex = 0;
 
     // Use this for initialization
