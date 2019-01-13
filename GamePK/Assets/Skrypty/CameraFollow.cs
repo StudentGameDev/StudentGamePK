@@ -21,7 +21,12 @@ public class CameraFollow : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (LevelNr == "2")
-            transform.position = new Vector3(Mathf.Clamp(player.transform.position.x, xMin, xMax), (Mathf.Clamp(player.transform.position.y, yMin, yMax)+2.0f), transform.position.z);
+        {
+            if (player.position.x < 265)
+                transform.position = new Vector3(Mathf.Clamp(player.transform.position.x, xMin, xMax), (Mathf.Clamp(player.transform.position.y, yMin+10, yMax)), transform.position.z);
+            else
+                transform.position = new Vector3(Mathf.Clamp(player.transform.position.x, xMin, xMax), (Mathf.Clamp(player.transform.position.y, yMin+2, yMax) + 2.0f), transform.position.z);
+        }
         else
             transform.position = new Vector3(Mathf.Clamp(player.transform.position.x, xMin, xMax), Mathf.Clamp(player.transform.position.y, yMin, yMax), transform.position.z);
     }

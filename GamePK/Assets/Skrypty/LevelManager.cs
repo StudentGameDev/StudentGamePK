@@ -12,7 +12,7 @@ public class LevelManager : MonoBehaviour
 
     public float respawnDelay;
     public string backToMenu;
-    public static float timer;
+    public float timer;
     public static int timerToInt;
 
     public GameObject heart1;
@@ -26,7 +26,7 @@ public class LevelManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        timer = 120;
+        timer = timer == 0 ? 120 : timer;
         heart1 = GameObject.Find("heart1");
         heart2 = GameObject.Find("heart2");
         heart3 = GameObject.Find("heart3");
