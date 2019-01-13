@@ -8359,6 +8359,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &952305861 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114012947559971596, guid: 63b3e34b0240ab94d9ccd5d4ff751998,
+    type: 2}
+  m_PrefabInternal: {fileID: 203245647}
+  m_Script: {fileID: 11500000, guid: 4be39ce294148b54798927bc85d81e5a, type: 3}
 --- !u!114 &959260825 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114967764504482916, guid: c8420039ed9ecfd44bd4c5f3550a79f2,
@@ -9982,6 +9988,11 @@ Prefab:
       propertyPath: playerSpeed
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114967764504482916, guid: c8420039ed9ecfd44bd4c5f3550a79f2,
+        type: 2}
+      propertyPath: gameLevelManager
+      value: 
+      objectReference: {fileID: 952305861}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8420039ed9ecfd44bd4c5f3550a79f2, type: 2}
   m_IsPrefabAsset: 0
