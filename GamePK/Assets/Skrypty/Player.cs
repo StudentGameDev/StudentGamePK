@@ -142,6 +142,16 @@ public class Player : MonoBehaviour
         {
             RespawnAndHealth();
         }
+
+        if(collision.transform.tag == "Caveman")
+        {
+            RespawnAndHealth();
+        }
+
+        if (collision.transform.tag == "BlueBird")
+        {
+            RespawnAndHealth();
+        }
     }
 
 

@@ -54,6 +54,7 @@ GameObject:
   - component: {fileID: 50205806738722384}
   - component: {fileID: 61903875249246958}
   - component: {fileID: 114757165472468666}
+  - component: {fileID: 68619502155320236}
   m_Layer: 0
   m_Name: Ptak_Poziom3
   m_TagString: BlueBird
@@ -83,7 +84,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1808583435030302}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.5, y: 1.38, z: 0}
+  m_LocalPosition: {x: -7.1, y: 1.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4249969919788370}
@@ -95,8 +96,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1491823299524670}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.0302258, y: 1.5632458, z: 0.037109375}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 94.95438, y: -3, z: 0.29676855}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4497443749415878}
@@ -176,6 +177,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.56, y: 1.57}
   m_EdgeRadius: 0
+--- !u!68 &68619502155320236
+EdgeCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1698117326979614}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -1.2656021, y: 0.8491707}
+  - {x: -0.0034332275, y: 0.8635633}
+  - {x: 1.2511978, y: 0.84917045}
 --- !u!95 &95089360772984776
 Animator:
   serializedVersion: 3
