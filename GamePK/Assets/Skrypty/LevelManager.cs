@@ -101,11 +101,14 @@ public class LevelManager : MonoBehaviour
 
     public void Restart()
     {
-        var r = boss.GetComponent(typeof(WinterBossActivator)) as WinterBossActivator;
-
-        if (r != null)
+        if (boss != null)
         {
-            r.Reset();
+            var r = boss.GetComponent(typeof(WinterBossActivator)) as WinterBossActivator;
+
+            if (r != null)
+            {
+                r.Reset();
+            }
         }
     }
 } // end class LevelManager
