@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1004367959627394}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.29, y: -1.44, z: -0.0390625}
+  m_LocalPosition: {x: 3.67, y: -0.69, z: -0.039062}
   m_LocalScale: {x: 8.088, y: 9.129, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -68,8 +68,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87dd37bfcc138b54dbc93c74fe616507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  redFlag: {fileID: 0}
-  greenFlag: {fileID: 0}
+  redFlag: {fileID: 21300000, guid: 42820af2772f24bda991ed7de294c2fd, type: 3}
+  greenFlag: {fileID: 21300000, guid: 21c95fcaf2ca0ea4981e087d6ba75bb0, type: 3}
   checkpointReached: 0
 --- !u!212 &212332724073700334
 SpriteRenderer:
