@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 4441400559794094}
   - component: {fileID: 212066785983759322}
   - component: {fileID: 61249639606351630}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: platform-block-09 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,8 +152,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1004779276322340}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 75.97736, y: 2.7829676, z: -1.1882812}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 24.29, y: -4.76, z: -1.0867187}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4441400559794094}
