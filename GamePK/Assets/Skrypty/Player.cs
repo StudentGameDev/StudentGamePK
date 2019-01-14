@@ -114,7 +114,7 @@ public class Player : MonoBehaviour
         {
             respawnPoint = other.transform.position;
         }
-        if (/*other.tag == "FallDetector" || */other.tag == "Mace1" || other.tag == "Mace2" || other.tag == "Saw1" || other.tag == "Spike1" || other.tag == "Spike2" || other.tag == "Spike_Up1")
+        if (/*other.tag == "FallDetector" || */other.tag == "Mace1" || other.tag == "Mace2" || other.tag == "Saw1" || other.tag == "Spike1" || other.tag == "Spike2" || other.tag == "Spike_Up1" || other.tag == "PlatformObstacles" || other.tag == "SpikeUp3")
         {
             RespawnAndHealth();
         }
