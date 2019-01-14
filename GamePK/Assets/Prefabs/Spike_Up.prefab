@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4657177065514548}
   - component: {fileID: 212472262226913534}
+  - component: {fileID: 68168712861711682}
   m_Layer: 0
   m_Name: Spike_Up
   m_TagString: SpikeUp3
@@ -40,6 +41,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &68168712861711682
+EdgeCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1417115435135052}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.6399994, y: -0.30761957}
+  - {x: -0.0337677, y: 0.60899734}
+  - {x: 0.61631775, y: -0.2129674}
 --- !u!212 &212472262226913534
 SpriteRenderer:
   m_ObjectHideFlags: 1
