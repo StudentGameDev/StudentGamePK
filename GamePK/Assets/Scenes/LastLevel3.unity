@@ -4677,7 +4677,7 @@ GameObject:
   - component: {fileID: 965559478}
   - component: {fileID: 965559477}
   - component: {fileID: 965559479}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: big-crate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6390,7 +6390,7 @@ GameObject:
   - component: {fileID: 1380123065}
   - component: {fileID: 1380123064}
   - component: {fileID: 1380123066}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: house
   m_TagString: Untagged
   m_Icon: {fileID: 0}
