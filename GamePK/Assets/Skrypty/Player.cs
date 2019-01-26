@@ -177,7 +177,7 @@ public class Player : MonoBehaviour
     //    }
     //}
 
-    private void RespawnAndHealth()
+    public void RespawnAndHealth()
     {
         gameLevelManager.ChangeEnergyBoss(-1);
 
