@@ -22,7 +22,7 @@ public class EndGame : MonoBehaviour {
         if (collision.CompareTag("Gracz1"))
         {
             CoinScript.AddExtraPointsTime();
-            ScoreScript.SaveCurrentStateToFile();
+            ScoreScript.SaveScoreTofile();
             SceneManager.LoadScene(Menu);
         }
     }
