@@ -3924,7 +3924,7 @@ MonoBehaviour:
   stoppingDistance: 25
   retreatDistance: 5
   distance: 5
-  startTimeBtwShots: 1.5
+  startTimeBtwShots: 1.8
   projectile: {fileID: 1986599644039478, guid: e755664a79c28e6489872e949ad51006, type: 2}
   energyBossLvl3: {fileID: 0}
   blockDoor: {fileID: 1710551567}
@@ -10853,11 +10853,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4061468471979656, guid: c8420039ed9ecfd44bd4c5f3550a79f2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -5.09
+      value: -4.36
       objectReference: {fileID: 0}
     - target: {fileID: 4061468471979656, guid: c8420039ed9ecfd44bd4c5f3550a79f2, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.06
+      value: 0.69
       objectReference: {fileID: 0}
     - target: {fileID: 4061468471979656, guid: c8420039ed9ecfd44bd4c5f3550a79f2, type: 2}
       propertyPath: m_LocalPosition.z
