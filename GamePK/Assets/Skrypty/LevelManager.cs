@@ -95,7 +95,7 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(deathSource.clip.length);
 
         SceneManager.LoadScene(backToMenu);
-        Debug.Log("LAMISZ CIENIASIE!");
+        Debug.Log("Bad");
 
     }
 

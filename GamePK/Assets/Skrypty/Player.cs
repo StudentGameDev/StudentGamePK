@@ -154,29 +154,6 @@ public class Player : MonoBehaviour
         }
     }
 
-
-    //void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.gameObject.tag == "MovingPlatform")
-    //    {
-    //        Debug.Log("entered");
-    //        //This will make the player a child of the Obstacle
-    //        player.transform.parent = other.gameObject.transform; //Change "myPlayer" to your player
-    //    }
-    //        Debug.Log(other.gameObject.tag);
-    //}
-
-    //void OnCollisionExit2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.tag == "MovingPlatform")
-    //    {
-
-    //        Debug.Log("leafed");
-    //        player.transform.SetParent(null);
-    //        //player.transform.parent = null;
-    //    }
-    //}
-
     public void RespawnAndHealth()
     {
         gameLevelManager.ChangeEnergyBoss(-1);
