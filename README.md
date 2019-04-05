@@ -1,7 +1,8 @@
 # StudentGamePK
 Student Game 
 
-Projekt - Jest to gra typu Mario na zaliczenie przedmiotu "Zarządzanie projektem informatycznym". Zespół składał się z trzech osób:
+Projekt - Jest to gra typu Mario na zaliczenie przedmiotu "Zarządzanie projektem informatycznym" na Politechnice Krakowskiej. 
+Zespół składał się z trzech osób:
 - Michał Drop
 - Daniel Chołuj
 - Andrzej Gnutek
